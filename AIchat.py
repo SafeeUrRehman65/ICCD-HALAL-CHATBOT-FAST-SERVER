@@ -20,7 +20,7 @@ from langgraph.prebuilt import ToolNode
 # Initialize store for preserving chat history
 store = {}
 # Initialize components (same as yours)
-fast_app = FastAPI()
+app = FastAPI()
 load_dotenv()
 
 # db = SQLDatabase.from_uri("postgresql://postgres:safee@localhost:5432/postgres")
@@ -155,19 +155,19 @@ workflow.add_conditional_edges(
 workflow.add_edge("tavily_tool_call_node", "model")
 
 # compile the graph
-app = workflow.compile(checkpointer = memory)
+agent = workflow.compile(checkpointer = memory)
 
 
-@fast_app.post("/invoke-graph")
+@app.post("/invoke-graph")
 def invoke_agent(question: QuestionRequest):
 
-    print("FastAPI app type:", type(fast_app))
+    print("FastAPI app type:", type(app))
 
     query = question.question
 
     input_messages = [HumanMessage(query)]
 
-    output = app.invoke({"messages": input_messages}, config)
+    output = agent.invoke({"messages": input_messages}, config)
     print("output", output)
     response = output["messages"][-1].content
     return output
