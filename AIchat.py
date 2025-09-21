@@ -41,9 +41,7 @@ fast_app = FastAPI()
 load_dotenv()
 
 # db = SQLDatabase.from_uri("postgresql://postgres:safee@localhost:5432/postgres")
-
-
-engine = create_engine("postgresql://postgres:safee@localhost:5432/postgres")
+# engine = create_engine("postgresql://postgres:safee@localhost:5432/postgres")
 
 # db = SQLDatabase(engine)
 # table_info = db.get_table_info()
