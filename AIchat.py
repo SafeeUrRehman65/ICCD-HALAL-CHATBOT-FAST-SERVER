@@ -1,36 +1,17 @@
 import os
 import getpass
 import traceback
-from langchain_community.utilities import SQLDatabase
-from starlette.types import Lifespan
-from typing_extensions import TypedDict,Annotated
 from langchain_core.prompts import ChatPromptTemplate,MessagesPlaceholder
-from langchain_ollama import ChatOllama
-from langchain_together import ChatTogether
 from dotenv import load_dotenv
 from pydantic import BaseModel,Field
 from langgraph.graph import START, END, StateGraph, MessagesState
-from langchain_community.tools.sql_database.tool import QuerySQLDatabaseTool
 from langchain_core.messages import HumanMessage,SystemMessage, trim_messages
-from langgraph.prebuilt import create_react_agent
-from langchain_community.agent_toolkits import SQLDatabaseToolkit
 from fastapi import FastAPI, Query, HTTPException
 from mangum import Mangum
 from prompts import halal_db_prompt, halal_db_greeting_prompt
-from langchain_community.chat_message_histories import ChatMessageHistory
-from langchain_core.chat_history import BaseChatMessageHistory
-from langchain_core.runnables.history import RunnableWithMessageHistory
 from langgraph.checkpoint.memory import MemorySaver
-from langchain import hub
-from langchain_cohere import ChatCohere, create_cohere_react_agent
-from langchain_cohere.llms import Cohere
-from langchain_cerebras import ChatCerebras
-from langchain_tavily import TavilySearch
-from langchain.agents import AgentExecutor
-from langchain_core.tools import tool
 from langchain_core.messages.utils import count_tokens_approximately
 from langchain_fireworks import ChatFireworks
-from sqlalchemy import create_engine
 from langchain_community.tools import DuckDuckGoSearchRun
 from langchain_community.utilities import DuckDuckGoSearchAPIWrapper
 from langgraph.prebuilt import ToolNode
