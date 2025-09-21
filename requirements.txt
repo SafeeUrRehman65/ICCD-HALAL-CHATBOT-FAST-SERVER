@@ -1,0 +1,13 @@
+langchain-community
+langchain-core
+langchain-ollama
+langchain-together
+python-dotenv
+pydantic
+langgraph
+langchain
+fastapi
+mangum
+sqlalchemy
+langchain-fireworks
+duckduckgo-search
