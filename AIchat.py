@@ -161,6 +161,8 @@ app = workflow.compile(checkpointer = memory)
 @fast_app.post("/invoke-graph")
 def invoke_agent(question: QuestionRequest):
 
+    print("FastAPI app type:", type(fast_app))
+
     query = question.question
 
     input_messages = [HumanMessage(query)]
@@ -203,4 +205,3 @@ def invoke_agent(question: QuestionRequest):
 
 #     #     print(step)
 
-handler = Mangum(fast_app, lifespan= 'off')
