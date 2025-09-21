@@ -203,4 +203,4 @@ def invoke_agent(question: QuestionRequest):
 
 #     #     print(step)
 
-handler = Mangum(app, lifespan= 'off')
+handler = Mangum(fast_app, lifespan= 'off')
