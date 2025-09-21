@@ -1,16 +1,15 @@
 {
-  "$schema": "https://openapi.vercel.sh/vercel.json",
   "version": 2,
   "builds": [
     {
-      "src": "/fastapi-server/AIchat.py",
+      "src": "AIchat.py",
       "use": "@vercel/python"
     }
   ],
   "routes": [
     {
       "src": "/(.*)",
-      "dest": "/fastapi-server/AIchat.py"
+      "dest": "AIchat.py"
     }
   ]
 }
