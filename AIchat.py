@@ -15,6 +15,8 @@ from langchain_fireworks import ChatFireworks
 from langchain_community.tools import DuckDuckGoSearchRun
 from langchain_community.utilities import DuckDuckGoSearchAPIWrapper
 from langgraph.prebuilt import ToolNode
+
+
 # Initialize store for preserving chat history
 store = {}
 # Initialize components (same as yours)

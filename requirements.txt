@@ -6,4 +6,3 @@ langchain-core
 langgraph
 langchain-fireworks
 langchain-community
-duckduckgo-search
